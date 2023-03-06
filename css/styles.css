@@ -360,7 +360,7 @@ img {
   color: var(--customers-color);
   border: 1px solid var(--customers-color);
   border-radius: 4px;
-  transition: color var(--timing-function) border-color var(--timing-function);
+  transition: color var(--timing-function), border-color var(--timing-function);
 }
 .customers-link:hover,
 .customers-link:focus {
@@ -472,6 +472,10 @@ img {
   color: var(--body-color);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
+  outline: none;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   background-color: transparent;
   transition: border-color var(--timing-function);
@@ -494,6 +498,7 @@ img {
   color: var(--body-color);
   background-color: var(--primary-brand);
   border: none;
+  cursor: pointer;
   border-radius: 4px;
   transition: background-color var(--timing-function);
 }
@@ -530,7 +535,7 @@ img {
 .filter-btn:hover {
   color: var(--body-color);
   background-color: var(--pressed-state);
-  border-color: 1px solid var(--accent-color);
+  border-color: 1px solid var(--pressed-state);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -538,6 +543,7 @@ img {
 .filter-btn:active {
   color: var(--body-color);
   background-color: var(--pressed-state);
+  border-color: 1px solid var(--pressed-state);
 }
 .container-element {
   padding: 32px 0px;
@@ -611,12 +617,12 @@ img {
   position: relative;
   overflow: auto;
   width: 100%;
-  height: 100%;
   max-width: 408px;
-  max-height: 576px;
   padding-top: 72px;
   padding-left: 24px;
   padding-right: 24px;
+  padding-bottom: 24px;
+
   opacity: 1;
   border-radius: 4px;
   background-color: var(--modal-color);
@@ -674,13 +680,11 @@ img {
   color: var(--overlays-shadow-color);
   border-radius: 4px;
   padding-left: 42px;
-  outline: 1.25px solid rgba(33, 33, 33, 0.2);
   transition: border-color var(--timing-function), color var(--timing-function);
 }
 .modal-form-input:focus {
   outline: none;
   border-color: var(--primary-brand);
-  outline: 1.25px solid var(--primary-brand);
 }
 .modal-form-input:focus + .form-icon {
   color: var(--primary-brand);
@@ -688,19 +692,18 @@ img {
 .modal-form-input:focus + .form-icon-current {
   color: var(--primary-brand);
 }
-.input-desc {
+.modal-form-field {
   display: block;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
-  margin-bottom: 4px;
+  margin-top: 8px;
   color: var(--customers-color);
-}
-.modal-form-field {
-  margin-bottom: 8px;
 }
 .input-wrapper {
   position: relative;
+  display: block;
+  margin-top: 4px;
 }
 .form-icon {
   position: absolute;
@@ -727,10 +730,15 @@ img {
   width: 100%;
   height: 120px;
   padding: 8px 16px;
+  margin-top: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   color: var(--overlays-shadow-color);
   border-radius: 4px;
-  outline: 1.25px solid rgba(33, 33, 33, 0.2);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  line-height: 1.17;
+  outline: none;
   transition: border-color var(--timing-function), color var(--timing-function);
 }
 .form-comment::placeholder {
@@ -741,7 +749,6 @@ img {
   line-height: 1.17;
 }
 .form-comment:focus {
-  outline: 1.25px solid var(--primary-brand);
   border-color: var(--primary-brand);
 }
 .form-check:checked + .fake-checkbox {
@@ -759,15 +766,11 @@ img {
   border: 1.25px solid var(--overlays-shadow-color);
   border-radius: 2px;
   cursor: pointer;
-  outline: 1.25px solid var(--modal-close);
   transition: background-color var(--timing-function),
     border-color var(--timing-function);
 }
 .form-check:checked + .fake-checkbox .checkbox-icon {
   opacity: 1;
-}
-.form-check:focus + .fake-checkbox {
-  outline: 1.25px solid var(--modal-close);
 }
 .checkbox-icon {
   width: 10px;
@@ -779,6 +782,7 @@ img {
 .check-desc {
   display: flex;
   margin-bottom: 24px;
+  margin-top: 16px;
 }
 .checkbox-desc {
   align-items: center;
